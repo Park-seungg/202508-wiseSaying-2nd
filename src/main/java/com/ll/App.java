@@ -3,11 +3,17 @@ package com.ll;
 import java.util.Scanner;
 
 public class App {
-    void run () {
+    void run() {
+        String input = """
+                등록
+                안녕!!
+                """;
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(input);
+
         String cmd = scanner.nextLine();
-        scanner.nextLine();
-        System.out.println(cmd);
+        String content = scanner.nextLine();
+        System.out.println("cmd : " + cmd);
+        System.out.println("content : " + content);
     }
 }

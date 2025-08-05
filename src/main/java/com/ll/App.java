@@ -13,8 +13,7 @@ public class App {
     }
 
     public void run () {
-
-        SystemController systemcontroller = AppContext.systemController;
+        SystemController systemController = AppContext.systemController;
         WiseSayingController wiseSayingController = new WiseSayingController();
 
         System.out.println("== 명언 앱 ==");
@@ -22,21 +21,17 @@ public class App {
         while (true) {
             System.out.println("명령) ");
             String cmd = scanner.nextLine();
+            String actionName = cmd.split("\\?")[0];
 
-            switch (cmd) {
-                case "등록" -> {
-                    wiseSayingController.actionWrite();
-                }
-                case "목록" -> {
-                    wiseSayingController.actionList();
-                }
+            switch (actionName) {
+                case "등록" -> wiseSayingController.actionWrite();
+                case "목록" -> wiseSayingController.actionList();
+                case "삭제" -> wiseSayingController.actionDelete(cmd);
                 case "종료" -> {
-                    systemcontroller.actionExit();
+                    systemController.actionExit();
                     return;
                 }
             }
-
         }
-
     }
 }

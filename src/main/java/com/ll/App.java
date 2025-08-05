@@ -1,7 +1,8 @@
 package com.ll;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.ll.domain.system.controller.SystemController;
+import com.ll.domain.wiseSaying.controller.WiseSayingController;
+
 import java.util.Scanner;
 
 public class App {

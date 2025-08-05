@@ -5,7 +5,7 @@ public class WiseSaying {
     private String author;
     private String content;
 
-    public WiseSaying (String author, String content) {
+    public WiseSaying(String author, String content) {
         this.author = author;
         this.content = content;
     }
@@ -32,5 +32,9 @@ public class WiseSaying {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public boolean isNew() {
+        return id == 0;
     }
 }

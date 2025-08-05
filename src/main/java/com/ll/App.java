@@ -18,9 +18,9 @@ public class App {
 
             switch (cmd) {
                 case "등록" -> {
-                    System.out.println("명언 : ");
+                    System.out.printf("명언 : ");
                     String content = scanner.nextLine();
-                    System.out.println("작가 : ");
+                    System.out.printf("작가 : ");
                     String author = scanner.nextLine();
                 }
                 case "종료" -> {

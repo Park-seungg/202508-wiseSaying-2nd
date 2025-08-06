@@ -35,12 +35,13 @@ public class WiseSayingFileRepositoryTest {
 
         wiseSayingFileRepository.save(wiseSaying);
 
-        WiseSaying foundWiseSaying =  wiseSayingFileRepository.findById(1);
+        WiseSaying foundWiseSaying =  wiseSayingFileRepository.findById(1).get();
 
         assertThat(
                 foundWiseSaying
         ).isEqualTo(wiseSaying);
     }
+
     @Test
     @DisplayName("2번째 등록에서는 2번 명언이 생성된다.")
     void t2() {
@@ -52,6 +53,7 @@ public class WiseSayingFileRepositoryTest {
 
         assertThat(wiseSaying2.getId()).isEqualTo(2);
     }
+
     @Test
     @DisplayName("명언 삭제")
     void t3() {
@@ -63,7 +65,7 @@ public class WiseSayingFileRepositoryTest {
 
         wiseSayingFileRepository.delete(wiseSaying2);
 
-        WiseSaying foundWiseSaying = wiseSayingFileRepository.findById(2);
+        WiseSaying foundWiseSaying = wiseSayingFileRepository.findById(2).get();
 
         assertThat(foundWiseSaying).isNull();
     }

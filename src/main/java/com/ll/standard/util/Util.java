@@ -21,6 +21,18 @@ public class Util {
             return Files.exists(getPath(filePath));
         }
 
+        public static boolean notExists(String filePath) {
+            return !exists(filePath);
+        }
+
+        public static String get(String filePath) {
+            try {
+                return Files.readString(getPath(filePath));
+            } catch (IOException e) {
+
+            }
+        }
+
         public static void set(String filePath, String content) {
             Path path = getPath(filePath);
             try {

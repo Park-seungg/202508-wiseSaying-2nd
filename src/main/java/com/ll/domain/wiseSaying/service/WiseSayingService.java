@@ -22,9 +22,9 @@ public class WiseSayingService {
         return wiseSaying;
     }
 
-    public List<WiseSaying> findForList(String keywordType, String keyword) {
+    public List<WiseSaying> findForList(String keywordType, String keyword, int pageSize, int pageNo) {
         if (keyword.isBlank()) {
-            return wiseSayingRepository.findForList();
+            return wiseSayingRepository.findForList(pageSize, pageNo);
         }
 
         return switch (keywordType) {
